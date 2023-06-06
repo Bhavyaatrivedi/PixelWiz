@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import { Loader, FormField,Card } from '../components';
 
-const renderCards=({data,title})=>{
+const RenderCards=({data,title})=>{
   if(data?.length>0){
     return data.map((post) =>
   <Card key={post.id} {...post}> </Card>
@@ -53,11 +53,11 @@ const Home = () => {
                 )}
                 <div className='grid lg:grid-cols-4 sm:grid-cols-3 xs:grid-cols-2 grid-cols-1 gap-3'>
                     {searchText ?(
-                        <renderCards data={[]}
+                        <RenderCards data={[]}
                         title="No search results found"
-                        ></renderCards>
+                        ></RenderCards>
                     ):(
-                    <renderCards 
+                    <RenderCards 
                     data={[]}
                     title="No posts found"
                     />)
