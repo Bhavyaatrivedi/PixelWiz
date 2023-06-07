@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors'
 import * as dotenv from 'dotenv';
+import connectDb from './mongodb/connect.js';
 
 dotenv.config();
 
@@ -13,7 +14,13 @@ app.get('/', async (req,res) =>{
 })
 
 const startServer = async () => {
-    app.listen(8800, () => console.log('Server is running on port http://localhost:8800'))
+    try{
+        connectDb(process.env.MONGODB_URL);
+        app.listen(8800, () => console.log('Server is running on port http://localhost:8800'))
+    } catch(error){
+        console.log(error);
+    }
+    
 }
 
 startServer();
