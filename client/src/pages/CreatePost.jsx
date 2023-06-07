@@ -49,6 +49,9 @@ const CreatePost = () => {
                  handleSupriseMe={handleSupriseMe}
                 >
                 </FormField>
+                <div className='relative bg-gray-50 border border-gray-500 tet'>
+
+                </div>
             </div>
         </form>
 
